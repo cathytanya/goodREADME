@@ -52,7 +52,7 @@ inquirer.prompt([
     // asking the user which tests were applied
     {
         type: 'input',
-        message: 'Which test have been done?',
+        message: 'Was a test done?',
         name: 'test',
     },
     // ask the user for their github username
