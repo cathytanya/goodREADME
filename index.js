@@ -5,6 +5,7 @@ const fs = require("fs");
 
 // the prompts which the system will ask the user
 inquirer.prompt([
+// // TODO: Create an array of questions for user input
     // ask user for the name of the project
     {
       type: 'input',
@@ -59,7 +60,7 @@ inquirer.prompt([
         type: 'input',
         message: 'Are there any questions?',
         name: 'questions',
-    },
+    }
   ])
 //   within the promise there is the template of how the information will appear on the README file
   .then(({
@@ -106,25 +107,18 @@ inquirer.prompt([
       ${test}
 
       ## Questions
-      ${questions}
-
-      `
-  }
-
-//   .then((response) =>
-    // response.confirm === response.password
-    //   ? console.log('Success!')
-    //   : console.log('You forgot your password already?!')
-//   );
- 
-// // TODO: Create an array of questions for user input
-// const questions = [];
+      ${questions}`
+    // a function which creates the README file using fs
+    writeToFile(title,template);
+  })
 
 // // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
+function writeToFile(fileName, template) {
+    fs.writeFile(`./${fileName.toLowerCase().split(' ').join('')}.md`,template,(err)=>{
+        if(err){
+            console.log(err)
+        }
+        console.log("Successfully created README.md")
+    })
+}
 
-// // TODO: Create a function to initialize app
-// function init() {}
-
-// // Function call to initialize app
-// init();
