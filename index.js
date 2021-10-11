@@ -55,12 +55,24 @@ inquirer.prompt([
         message: 'Which test have been done?',
         name: 'test',
     },
-    // ask the user if they have any questions or problems with the project
+    // ask the user for their github username
     {
         type: 'input',
-        message: 'Are there any questions?',
-        name: 'questions',
-    }
+        message: 'What is your Github username?',
+        name: 'github',
+    },
+    // ask the user for a link to their github profile
+    {
+      type: 'input',
+      message: 'What is your Github profile link?',
+      name: 'link',
+    },
+    // ask the user for an email
+    {
+      type: 'input',
+      message: 'What is your email?',
+      name: 'email',
+    },
   ])
 //   within the promise there is the template of how the information will appear on the README file
   .then(({
@@ -72,19 +84,13 @@ inquirer.prompt([
     license,
     constribution,
     test,
-    questions
+    github,
+    link,
+    email
+    
   })=>{
       const template =`# ${title}
       
-      *[Description](#description)
-      *[Table of Contents](#table)
-      *[Install](#installation)
-      *[Usage](#useage)
-      *[License](#license)
-      *[Constribution](#constribution)
-      *[Test](#test)
-      *[Questions](#questions)
-
       ## Description
       ${description}
 
@@ -107,7 +113,9 @@ inquirer.prompt([
       ${test}
 
       ## Questions
-      ${questions}`
+      ${github}
+      ${link}
+      ${email}`
     // a function which creates the README file using fs
     writeToFile(title,template);
   })
