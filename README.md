@@ -19,4 +19,5 @@ It is suppose to asssist users in creating their README files for their reposito
   - THEN I am taken to the corresponding section of the README
 
 ## Screen Recording of the functioning:
+https://watch.screencastify.com/v/8LPGfRognJMnEhh23Hjx
 
