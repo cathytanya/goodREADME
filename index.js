@@ -1,5 +1,7 @@
 // TODO: Include packages needed for this application
-
+// inquirer was installed to the folder
+const inquirer = require('inquirer');
+ 
 // TODO: Create an array of questions for user input
 const questions = [];
 
